@@ -1,9 +1,9 @@
-package practice_4;
+package practice_4.solvers;
 
-import static practice_4.Season.WINTER;
+import practice_4.Season;
 
 public class SwitchTaskSolver {
-    public String dayOfWeek(int day) {
+    public static String dayOfWeek(int day) {
         String dayOfWeek = "";
         switch (day) {
             case 1:
@@ -34,7 +34,7 @@ public class SwitchTaskSolver {
         return dayOfWeek;
     }
 
-    public String describeSeason(Season season) {
+    public static String describeSeason(Season season) {
         String description = "";
         switch (season) {
             case WINTER -> description = "Зима — холодно и снежно.";
@@ -43,6 +43,17 @@ public class SwitchTaskSolver {
             case AUTUMN -> description = "Autumn - it is getting sad...";
         }
         return description;
+    }
+
+    static void main() {
+        //dayOfWeek
+        System.out.println(dayOfWeek(5));
+        System.out.println(dayOfWeek(55));
+
+
+        //check describeSeason method
+        System.out.println(describeSeason(Season.SPRING));
+        System.out.println(describeSeason(Season.SUMMER));
     }
 
 }

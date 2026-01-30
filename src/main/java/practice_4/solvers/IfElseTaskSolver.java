@@ -1,4 +1,4 @@
-package practice_4;
+package practice_4.solvers;
 
 public class IfElseTaskSolver {
     /**
@@ -7,7 +7,7 @@ public class IfElseTaskSolver {
      * @param number
      * @return
      */
-    public String getParity(int number) {
+    public static String getParity(int number) {
         String parity = "Odd";
         if (number % 2 == 0) {
             parity = "Even";
@@ -15,7 +15,7 @@ public class IfElseTaskSolver {
         return parity;
     }
 
-    public String checkAge(int age) {
+    public static String checkAge(int age) {
         String ageDescription = "";
         if (age < 18) {
             ageDescription = "Minor";
@@ -27,7 +27,7 @@ public class IfElseTaskSolver {
         return ageDescription;
     }
 
-    public int checkMax(int a, int b, int c) {
+    public  static int  checkMax(int a, int b, int c) {
         int maxAB = b;
         if (a > b) {
             maxAB = a;
@@ -40,4 +40,18 @@ public class IfElseTaskSolver {
     }
 
 
+   public static void main() {
+        //method to check if a number is even
+        System.out.println(getParity(5));
+        System.out.println(getParity(6));
+
+        //method to check age
+        System.out.println(checkAge(4));
+        System.out.println(checkAge(21));
+        System.out.println(checkAge(74));
+
+        //method to find max
+        System.out.println(checkMax(21,12,1456));
+
+    }
 }
