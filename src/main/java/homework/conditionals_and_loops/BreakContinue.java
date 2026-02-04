@@ -4,18 +4,20 @@ import java.util.Scanner;
 
 public class BreakContinue {
     static void main(String[] args) {
-//        sumOfNumbers();
+        try (Scanner scanner = new Scanner(System.in)) {
+
+
+//            sumOfNumbers(scanner);
 //        skipDivisibleToThree();
-//        printOnlyPositiveFIRST_OPTION();
-//        printOnlyPositiveSECOND_OPTION();
-        enterLinesBeforeStop();
+//            printOnlyPositiveFIRST_OPTION(scanner);
+//            printOnlyPositiveSECOND_OPTION(scanner);
+            enterLinesBeforeStop(scanner);
+        }
     }
 
     //1. Сумма чисел до первого отрицательного (использовать break)
 
-    public static void sumOfNumbers() {
-        Scanner scanner = new Scanner(System.in);
-
+    public static void sumOfNumbers(Scanner scanner) {
         int sum = 0;
         while (true) {
             System.out.println("Enter number: ");
@@ -41,8 +43,7 @@ public class BreakContinue {
 
     //3. Вывод только положительных чисел (использовать continue)
 
-    public static void printOnlyPositiveFIRST_OPTION() {
-        Scanner scanner = new Scanner(System.in);
+    public static void printOnlyPositiveFIRST_OPTION(Scanner scanner) {
         int num;
         do {
             System.out.println("Enter a number: ");
@@ -54,9 +55,7 @@ public class BreakContinue {
         } while (num != 0);
     }
 
-    public static void printOnlyPositiveSECOND_OPTION() {
-        Scanner scanner = new Scanner(System.in);
-
+    public static void printOnlyPositiveSECOND_OPTION(Scanner scanner) {
         while (true) {
             System.out.println("Enter a number (0 for exit): ");
             int num = scanner.nextInt();
@@ -70,8 +69,7 @@ public class BreakContinue {
 
     //4. Ввод строк до команды "stop" (использовать break)
 
-    public static void enterLinesBeforeStop() {
-        Scanner scanner = new Scanner(System.in);
+    public static void enterLinesBeforeStop(Scanner scanner) {
         while (true) {
             System.out.println("Enter line: ('stop' - to finish the program)");
             String line = scanner.nextLine();

@@ -4,15 +4,15 @@ import java.util.Scanner;
 
 public class WhileTasks {
     static void main(String[] args) {
-//        printCountdown();
-//        findFactorial();
-        printEvenNumbers();
+        try (Scanner scanner = new Scanner(System.in)) {
+//            printCountdown(scanner);
+//            findFactorial(scanner);
+            printEvenNumbers(scanner);
+        }
     }
-
     //1. Вычисление факториала с помощью while
 
-    public static void findFactorial() {
-        Scanner scanner = new Scanner(System.in);
+    public static void findFactorial(Scanner scanner) {
         System.out.println("Enter number n: ");
         int n = scanner.nextInt();
         int result = 1;
@@ -27,8 +27,7 @@ public class WhileTasks {
 
     //2. Вывод всех чётных чисел до заданного
 
-    public static void printEvenNumbers() {
-        Scanner scanner = new Scanner(System.in);
+    public static void printEvenNumbers(Scanner scanner) {
         System.out.println("Enter number: ");
         int number = scanner.nextInt();
         int i = 1;
@@ -41,8 +40,7 @@ public class WhileTasks {
     }
 
     //3. Обратный отсчёт от введённого числа до 1
-    public static void printCountdown() {
-        Scanner scanner = new Scanner(System.in);
+    public static void printCountdown(Scanner scanner) {
         System.out.println("Enter positive number ");
         int number = scanner.nextInt();
         while (number >= 1) {

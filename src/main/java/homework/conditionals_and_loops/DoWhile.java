@@ -4,16 +4,17 @@ import java.util.Scanner;
 
 public class DoWhile {
     static void main(String[] args) {
-//        findPositive();
-//        checkPassword();
+        try (Scanner scanner = new Scanner(System.in)) {
+//            findPositive(scanner);
+//            checkPassword(scanner);
 //        printDigits();
-//        enterExitCommand();
-        numberOfDigits();
+//            enterExitCommand(scanner);
+            numberOfDigits(scanner);
+        }
     }
 
     //1. Запрос положительного числа
-    public static void findPositive() {
-        Scanner scanner = new Scanner(System.in);
+    public static void findPositive(Scanner scanner) {
         int num;
         do {
             System.out.println("Enter number: ");
@@ -24,10 +25,8 @@ public class DoWhile {
 
     //2. Проверка пароля
 
-    public static void checkPassword() {
-        Scanner scanner = new Scanner(System.in);
+    public static void checkPassword(Scanner scanner) {
         String password;
-
         do {
             System.out.println("Enter password: ");
             password = scanner.nextLine();
@@ -47,10 +46,8 @@ public class DoWhile {
 
     //4. Завершение программы по команде "exit"
 
-    public static void enterExitCommand() {
-        Scanner scanner = new Scanner(System.in);
+    public static void enterExitCommand(Scanner scanner) {
         String command;
-
         do {
             System.out.println("Enter command: ");
             command = scanner.nextLine();
@@ -60,18 +57,18 @@ public class DoWhile {
 
     //5. Подсчёт количества цифр в числе
 
-    public static void numberOfDigits() {
-        Scanner scanner = new Scanner(System.in);
+    public static void numberOfDigits(Scanner scanner) {
         System.out.println("Enter any integer: ");
         int num = scanner.nextInt();
         int count = 0;
+        int originalNum = num;
 
         do {
             count++; //1//2//3
             num = num / 10; //555-> 55 ->5-> 0.5
         } while (num > 0);
 
-        System.out.println("Number of digits in " + num + " :  " + count);
+        System.out.println("Number of digits in " + originalNum + " :  " + count);
     }
 
 }

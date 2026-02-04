@@ -5,13 +5,14 @@ import java.util.Scanner;
 public class ForTasks {
 
     static void main(String[] args) {
+        try (Scanner scanner = new Scanner(System.in)) {
 //        printNumbersDivisibleByThree();
-//        sumFromOneToN();
-//        multiplicationTable();
-//        isPrimeNumber();
-        printDigitsFromOneToTen();
+//        sumFromOneToN(scanner);
+//        multiplicationTable(scanner);
+        isPrimeNumber(scanner);
+//            printDigitsFromOneToTen();
+        }
     }
-
 
     //1. Вывод чисел от 1 до 100, делящихся на 3
     public static void printNumbersDivisibleByThree() {
@@ -24,8 +25,7 @@ public class ForTasks {
 
 
     //2. Сумма чисел от 1 до n
-    public static void sumFromOneToN() {
-        Scanner scanner = new Scanner(System.in);
+    public static void sumFromOneToN(Scanner scanner) {
         System.out.println("Enter number n: ");
         int n = scanner.nextInt();
         int sum = 0;
@@ -38,9 +38,8 @@ public class ForTasks {
 
     //3. Таблица умножения для числа
 
-    public static void multiplicationTable() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter number: ");
+    public static void multiplicationTable(Scanner scanner) {
+           System.out.println("Enter number: ");
         int num = scanner.nextInt();
         for (int i = 1; i <= num; i++) {
             System.out.println(i + " * " + num + " = " + (i * num));
@@ -50,15 +49,14 @@ public class ForTasks {
 
     //4. Проверка на простое число
 
-    public static void isPrimeNumber(){
-        Scanner scanner = new Scanner(System.in);
+    public static void isPrimeNumber(Scanner scanner){
         System.out.println("Enter number: ");
         int num = scanner.nextInt();
         boolean isPrime = true;
         if(num < 2) {
             isPrime = false;
         } else {
-            for(int i = 2; i < num; i++) {
+            for(int i = 2; i * i < num; i++) {
                 if(num % i == 0){
                     isPrime = false;
                     break;

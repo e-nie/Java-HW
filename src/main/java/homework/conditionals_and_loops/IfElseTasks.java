@@ -6,18 +6,18 @@ import java.util.Scanner;
 
 public class IfElseTasks {
     static void main(String[] args) {
-//        printNumber();
-//        findLargerNumber();
-//        printGrade();
-//        isEven();
-//        findDiscount();
-        evaluateTestPoints();
+        try (Scanner scanner = new Scanner(System.in)) { //создаем возможность прочитать введенный нами текст
+            printNumber(scanner);
+            findLargerNumber(scanner);
+            printGrade(scanner);
+            isEven(scanner);
+            findDiscount(scanner);
+            evaluateTestPoints(scanner);
+        }
     }
-
     //1. Определение знака числа
 
-    public static void printNumber() {
-        Scanner scanner = new Scanner(System.in);//создаем возможность прочитать введенный нами текст
+    public static void printNumber(Scanner scanner) {
         System.out.print("Enter any number: ");
         int number = scanner.nextInt();//прочитали введенное число и записали в переменную
         if (number < 0) {
@@ -31,8 +31,7 @@ public class IfElseTasks {
 
     //2. Поиск наибольшего из двух чисел
 
-    public static void findLargerNumber() {
-        Scanner scanner = new Scanner(System.in);
+    public static void findLargerNumber(Scanner scanner) {
         System.out.println("Enter the first number: ");
         int number1 = scanner.nextInt();
         System.out.println("Enter the second number: ");
@@ -43,8 +42,7 @@ public class IfElseTasks {
 
     //3. Вывод оценки по шкале 1–5
 
-    public static void printGrade() {
-        Scanner scanner = new Scanner(System.in);
+    public static void printGrade(Scanner scanner) {
         System.out.println("Enter the grade from 1 to 5: ");
         int grade = scanner.nextInt();
         switch (grade) {
@@ -71,8 +69,7 @@ public class IfElseTasks {
 
     //4. Проверка на чётность
 
-    public static void isEven() {
-        Scanner scanner = new Scanner(System.in);
+    public static void isEven(Scanner scanner) {
         System.out.println("Enter any number: ");
         int number = scanner.nextInt();
         if (number % 2 == 0) {
@@ -84,8 +81,7 @@ public class IfElseTasks {
 
     //5. Определение размера скидки по возрасту
 
-    public static void findDiscount() {
-        Scanner scanner = new Scanner(System.in);
+    public static void findDiscount(Scanner scanner) {
         System.out.println("Enter the age: ");
         int age = scanner.nextInt();
         if (age < 18) {
@@ -99,8 +95,7 @@ public class IfElseTasks {
 
     //6. Оценка результата теста по баллам
 
-    public static void evaluateTestPoints() {
-        Scanner scanner = new Scanner(System.in);
+    public static void evaluateTestPoints(Scanner scanner) {
         System.out.println("Enter number of points from 0 to 100: ");
         int points = scanner.nextInt();
 
