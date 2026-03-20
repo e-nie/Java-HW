@@ -72,7 +72,7 @@ public class ArrayListTasks {
 
     public static Integer findMaxNumber(ArrayList<Integer> arrayList) {
         if(arrayList.isEmpty()) return null;
-        Integer max = 0;
+        Integer max = arrayList.get(0);
         for (Integer el : arrayList) {
             if (el > max) {
                 max = el;

@@ -28,7 +28,7 @@ public class HashSetTasks {
 
         //4
         HashSet<String> names = new HashSet<>(Arrays.asList("Bettina", "Petra", "Claudia", "Evchen"));
-        System.out.println(names.contains("Evchen"));
+        containsName(names,"Evchen");
     }
 
 
@@ -44,5 +44,11 @@ public class HashSetTasks {
     //4 Создайте HashSet, содержащий набор имен. Напишите программу, которая проверяет,
     // содержится ли ваше имя в множестве, и выводит соответствующее сообщение.
 
-
+    public static void containsName(HashSet<String> set, String name) {
+        if(set.contains(name)){
+            System.out.println(name + " is in the set");
+        } else {
+            System.out.println(name + " is not in the set");
+        }
+    }
 }

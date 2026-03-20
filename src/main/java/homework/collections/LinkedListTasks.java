@@ -43,8 +43,9 @@ public class LinkedListTasks {
     //2.Реализуйте очередь задач с LinkedList. Добавьте 3 задачи и обработайте их в порядке поступления.
 
     public static void processTasksInOrderOfArrival(LinkedList<String> tasks) {
-        for (String task : tasks) {
-            System.out.println("Log: " + task + " processed");
+        while(!tasks.isEmpty()) {
+          String task =   tasks.poll();
+            System.out.println(task + " is being processed...");
         }
     }
 
