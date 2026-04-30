@@ -2,10 +2,7 @@ package homework.multithreading;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.concurrent.ExecutionException;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.Future;
+import java.util.concurrent.*;
 
 public class Task5 {
     static void main(String[] args) throws ExecutionException, InterruptedException {
@@ -16,28 +13,28 @@ public class Task5 {
         // каждая задача должна быть выполнена с задержкой в 2 секунды. После выполнения всех задач, результат должен быть выведен в главном потоке.
 
         ExecutorService executor = Executors.newFixedThreadPool(4);
-        List<Future<String>> results = new ArrayList<>();
+        try {
+            List<Future<String>> results = new ArrayList<>();
+            for (int i = 0; i <= 9; i++) {
+                int testNumber = i;
 
-        for (int i = 0; i <= 9; i++) {
-            int testNumber = i;
+                Future<String> future = executor.submit(() -> {
+                    try {
+                        Thread.sleep(2000);
+                    } catch (InterruptedException e) {
+                        System.out.println("Interrupted");
+                    }
+                    return "Test " + testNumber + " completed by " + Thread.currentThread().getName();
+                });
 
-            Future<String> future = executor.submit(() -> {
-                try {
-                    Thread.sleep(2000);
-                } catch (InterruptedException e) {
-                    System.out.println("Interrupted");
-                }
-                return "Test " + testNumber + " completed by" + Thread.currentThread().getName();
-            });
+                results.add(future);
+            }
 
-            results.add(future);
+            for (Future<String> result : results) {
+                System.out.println(result.get());
+            }
+        } finally {
+            executor.shutdown();
         }
-
-        for (Future<String> result : results) {
-            System.out.println(result.get());
-        }
-
-        executor.shutdown();
-
     }
 }

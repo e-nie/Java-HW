@@ -12,6 +12,11 @@ public class Task3 {
             int counter = 0;
             while (!stop) {
                 counter++;
+                try {
+                    Thread.sleep(10);
+                } catch (InterruptedException e) {
+                    System.out.println("Add some sleep to reduce CPU load");
+                }
             }
             System.out.println("Counter after stop: " + counter);
         });

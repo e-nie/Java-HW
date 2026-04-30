@@ -19,7 +19,7 @@ public class Task1 {
         });
 
         thread.start();
-        thread.interrupt();
+
 
 
 
