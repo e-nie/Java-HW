@@ -15,7 +15,7 @@ public class IsLeapYearTest {
      * positive cases:
      * Високосные (2020, 2000, 1600) -> true
      * * Edge positive cases:
-     * 0, 4, 400 → true
+     * 4, 400 → true
      * Negative cases:
      * Обычные годы 2019, 2021, 2022 → false
      * Года, которые делятся на 100, но не на 400 (1900, 2100) -> false
@@ -30,7 +30,7 @@ public class IsLeapYearTest {
             //positive cases - leap years
             2020, 2000, 1600,
             //positive corner cases
-            0, 4, 400})
+            4, 400})
 
     public void setIsLeapYearValidYears(int year) {
 

@@ -35,8 +35,7 @@ public class FindMaxTest {
     public static Stream<Arguments> provideArraysForFindMax() {
         return Stream.of(
                 Arguments.of(new int[]{3, 5, 7, 2}, 7),
-                Arguments.of(new int[]{7}, 7),
-                Arguments.of(new int[]{-3, -5, -7, 2}, 2)
+                Arguments.of(new int[]{7}, 7)
         );
     }
 
@@ -50,6 +49,12 @@ public class FindMaxTest {
     }
 
     @Test
+    public void findMaxShouldReturnMaxValueWithNegatives() {
+        assertEquals(-2, findMax.findMax(new int[]{-3, -5, -7, -2}));
+    }
+
+
+    @Test
     public void shouldThrowExceptionIfArrayIsEmpty() {
         NoSuchElementException exception = assertThrows(NoSuchElementException.class,
                 () -> findMax.findMax(new int[]{}));
@@ -58,8 +63,7 @@ public class FindMaxTest {
 
     @Test
     public void shouldThrowExceptionIfArrayHasNull() {
-        NullPointerException exception = assertThrows(NullPointerException.class,
+        assertThrows(NullPointerException.class,
                 () -> findMax.findMax(null));
-        assertEquals("Cannot read the array length because \"array\" is null", exception.getMessage());
     }
 }

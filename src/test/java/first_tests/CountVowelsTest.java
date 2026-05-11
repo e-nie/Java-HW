@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
  * null (должно выбрасываться исключение) - IllegalArgumentException
  * Строки без гласных -> 0
  */
-public class countVowelsTest {
+public class CountVowelsTest {
     protected CountVowels countVowels;
 
     @BeforeEach

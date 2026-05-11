@@ -30,14 +30,22 @@ public class FindSecondMaxTest {
         findSecondMax = new FindSecondMax();
     }
 
-    @Test
-    public void shouldReturnSecondMaxValue() {
-        assertEquals(5, findSecondMax.findSecondMax(new int[]{3, 5, 7, 2}));
+    public static Stream<Arguments> arraysToValidatePositiveCases() {
+        return Stream.of(
+                Arguments.of(new int[]{3, 5, 7, 2}, 5),
+               Arguments.of( new int[]{12, 13, 15, 26, 36},26),
+                Arguments.of(new int[]{55, 65, 75, 86, 966}, 86)
+        );
+    }
+
+    @ParameterizedTest
+    @MethodSource("arraysToValidatePositiveCases")
+        public void shouldReturnSecondMaxValue(int[] arr, int secondMax) {
+        assertEquals(secondMax, findSecondMax.findSecondMax( arr));
     }
 
     public static Stream<int[]> arraysToValidateExceptions() {
         return Stream.of(
-//
                 new int[]{4},
                 new int[]{}
         );

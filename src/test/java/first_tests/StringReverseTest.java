@@ -56,23 +56,12 @@ public class StringReverseTest {
     }
 
     @Test
-    public void reverseStringWithNullInput(){
+    public void reverseStringWithNullInput() {
         String actualResult = stringReverse.reverse(null);
         String expected = null;
 
         assertEquals(expected, actualResult);
     }
 
-    public static class FindMaxTest {
-        /**
-         * Тесты должны проверять:
-         * Обычный массив ([3, 5, 7, 2])
-         * Один элемент в массиве
-         * Отрицательные числа
-         * Пустой массив (должно выбрасываться исключение)
-         */
-    }
 
-    public static class IsLeapYearTest {
-    }
 }
