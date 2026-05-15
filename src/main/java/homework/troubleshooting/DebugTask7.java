@@ -15,6 +15,7 @@ public class DebugTask7 {
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {
+                Thread.currentThread().interrupt();
             }
             balance -= amount;
             System.out.println("New balance: " + balance);

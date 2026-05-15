@@ -1,7 +1,7 @@
 package homework.complex_tasks.task_2;
 
 public class UserValidator {
-    private boolean validationEnabled = true;
+    private boolean validationEnabled=true;
 
     public void checkName(User user) {
         if (!validationEnabled) {
