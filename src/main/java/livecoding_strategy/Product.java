@@ -1,6 +1,6 @@
 package livecoding_strategy;
 
-public abstract class Product {
+public class Product {
     private String title;
     private int price;
 
