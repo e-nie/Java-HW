@@ -1,4 +1,4 @@
-package mock_prep.notification_system;
+package mock_prep.OOPTasks.polymorphism.notification_system;
 
 public class SMSNotification extends Notification{
     public SMSNotification(String recipient, String messageText) {

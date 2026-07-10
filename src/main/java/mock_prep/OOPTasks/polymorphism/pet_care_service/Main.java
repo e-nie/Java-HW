@@ -1,4 +1,4 @@
-package mock_prep.pet_care_service;
+package mock_prep.OOPTasks.polymorphism.pet_care_service;
 /*
 Система работает с разными питомцами:
 * кот
@@ -33,5 +33,23 @@ package mock_prep.pet_care_service;
  */
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main {
+    static void main(String[] args) {
+
+    Pet cat  = new PetCat("Lois");
+    Pet dog  = new PetDog("Hugo");
+    Pet dragon  = new PetDragon("Drago");
+
+    List<Pet> pets = new ArrayList<>();
+    pets.add(cat);
+    pets.add(dog);
+    pets.add(dragon);
+
+    PetSystem system = new PetSystem();
+    system.allEat(pets);
+    system.allSleep(pets);
+    }
 }

@@ -1,4 +1,4 @@
-package mock_prep.student_system;
+package mock_prep.OOPTasks.polymorphism.student_system;
 
 /**
  * Student Grade Journal
