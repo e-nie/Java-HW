@@ -13,13 +13,12 @@ package homework.OOP_principles_in_Java.task_8;
  */
 public class Main {
     static void main(String[] args) {
+        Museum museum = new Museum();
         Manuscript manuscript = new Manuscript();
-        Museum museum  = new Museum();
-        museum.setExhibit(manuscript);
+        Sculpture sculpture = new Sculpture();
+        museum.addExhibit(manuscript);
+        museum.addExhibit(sculpture);
         museum.exhibitSummary();
-
-        Sculpture sculpture  = new Sculpture();
-        museum.setExhibit(sculpture);
-        museum.exhibitSummary();
+ 
     }
 }

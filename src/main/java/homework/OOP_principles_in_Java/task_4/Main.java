@@ -26,13 +26,13 @@ package homework.OOP_principles_in_Java.task_4;
 
 public class Main {
     static void main(String[] args) {
-        Starfish newStarfish = new Starfish();
         AquariumManager aquarium = new AquariumManager();
-        aquarium.addSeaCreature(newStarfish);
-        aquarium.showBehaviour();
+        Starfish starfish = new Starfish();
+        Shark shark = new Shark();
+        aquarium.addSeaCreature(starfish);
+        aquarium.addSeaCreature(shark);
+        ;
 
-        Shark newShark = new Shark();
-        aquarium.addSeaCreature(newShark);
         aquarium.showBehaviour();
     }
 }

@@ -15,4 +15,9 @@ public class Cow extends FarmAnimal {
     void care() {
         System.out.println("Cow needs to graze");
     }
+
+    @Override
+    public String toString(){
+        return "Cow";
+    }
 }

@@ -13,14 +13,16 @@ package homework.OOP_principles_in_Java.task_5;
  */
 public class Main {
     static void main(String[] args) {
-        Cow cow = new Cow();
+
         Farmer farmer = new Farmer();
+        Cow cow = new Cow();
+        Hen hen = new Hen();
+
         farmer.addAnimal(cow);
+        farmer.addAnimal(hen);
+
         farmer.printAnimalInfo();
 
-        Hen hen = new Hen();
-        farmer.addAnimal(hen);
-        farmer.printAnimalInfo();
     }
 
 

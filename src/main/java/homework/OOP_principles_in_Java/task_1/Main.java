@@ -42,17 +42,17 @@ public class Main {
         //add bird to the zoo
         Bird bird = new Bird();
         zoo.addAnimal(bird);
-        zoo.sayMakeSound();
-        zoo.sayMakeMove();
-        zoo.removeAnimal();
+        zoo.makeAnimalsSound();
+        zoo.makeAnimalsMove();
+        zoo.removeAnimal(bird);
 
         //replace bird to elephant
 
         Elephant elephant = new Elephant();
         zoo.addAnimal(elephant);
-        zoo.sayMakeSound();
-        zoo.sayMakeMove();
-        zoo.removeAnimal();
+        zoo.makeAnimalsSound();
+        zoo.makeAnimalsMove();
+        zoo.removeAnimal(elephant);
 
     }
 }

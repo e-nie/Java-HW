@@ -4,6 +4,9 @@ public class PetSystem {
     private Pet pet;
 
     public void addPet(Pet pet) {
+        if (pet == null) {
+            throw new IllegalArgumentException("A pet cannot be null!");
+        }
         this.pet = pet;
         System.out.println("Log: Pet added");
     }
@@ -15,19 +18,13 @@ public class PetSystem {
 
     public void makePetPlay() {
         if (this.pet instanceof Playable) {
-            Playable playablePet = (Playable) this.pet;
-            playablePet.play();
-        } else {
-            System.out.println("Error!!! The pet cannot play!");
+            pet.play();
         }
     }
 
     public void makePetWalk() {
-        if (this.pet instanceof Walkable) {
-            Walkable walkablePet = (Walkable) this.pet;
-            walkablePet.walk();
-        } else {
-            System.out.println("Error! The pet cannot walk outside!");
-        }
+        pet.walk();
     }
+
 }
+

@@ -13,13 +13,14 @@ package homework.OOP_principles_in_Java.task_6;
  */
 public class Main {
     static void main(String[] args) {
-        Orchid orchid = new Orchid();
         BotanicalGarden garden = new BotanicalGarden();
-        garden.addPlant(orchid);
-        garden.maintainPlant();
 
+        Orchid orchid = new Orchid();
         Cactus cactus = new Cactus();
+
+        garden.addPlant(orchid);
         garden.addPlant(cactus);
+
         garden.maintainPlant();
     }
 }

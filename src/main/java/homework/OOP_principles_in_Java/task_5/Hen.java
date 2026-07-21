@@ -15,4 +15,9 @@ public class Hen extends FarmAnimal {
     void care() {
         System.out.println("A hen needs a chicken feeder");
     }
+
+    @Override
+    public String toString(){
+        return "Hen";
+    }
 }
