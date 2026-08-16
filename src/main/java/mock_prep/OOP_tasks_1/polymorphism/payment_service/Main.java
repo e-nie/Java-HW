@@ -5,20 +5,16 @@ import java.util.List;
 
 public class Main {
     static void main(String[] args) {
+        Employee employee1 = new FixedSalaryEmployee("Mary", 5000);
+        Employee employee2 = new HourlyRateEmployee("Peter", 150, 27);
+        Employee employee3 = new SalesPercentEmployee("Alan", 4555, 0.13);
 
-        PaymentType bank = new BankPay("Olly", 1200);
-        PaymentType payPal = new PPPay("Molly", 1500);
-        PaymentType crypto = new Crypto("Polly", 1600);
-
-        List<PaymentType> payments = new ArrayList<>();
-        payments.add(bank);
-        payments.add(payPal);
-        payments.add(crypto);
-
+        List<Employee> employeeList = new ArrayList<>();
+        employeeList.add(employee1);
+        employeeList.add(employee2);
+        employeeList.add(employee3);
 
         PaymentService service = new PaymentService();
-
-     service.payAll(payments);
-
+        service.payAll(employeeList);
     }
 }
